@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.antoniolategano.mensapp.MainActivity">
+    <item
+        android:id="@+id/pasti_setting"
+        android:orderInCategory="100"
+        android:title="Imposta Numero Pasti"
+        app:showAsAction="never" />
+</menu>
