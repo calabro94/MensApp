@@ -3,6 +3,7 @@ package com.example.antoniolategano.mensapp;
 import android.app.AlarmManager;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -106,14 +107,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        myIntent = new Intent(this , MyReceiver.class);
+        /*myIntent = new Intent(this , MyReceiver.class);
         AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, myIntent, 0);
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 21);
         calendar.set(Calendar.MINUTE, 39);
         calendar.set(Calendar.SECOND, 00);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY , pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY , pendingIntent);*/
     }
 
     @Override
@@ -147,6 +148,14 @@ public class MainActivity extends AppCompatActivity {
             inserimento_pasti.setVisibility(View.VISIBLE);
             conferma.setVisibility(View.VISIBLE);
             return true;
+        } else if (id == R.id.alarm) {
+            if(item.getTitle().equals(getString(R.string.avvia_promemoria))) {
+                MyReceiver.setupAlarm(this);
+                item.setTitle(R.string.stop_promemoria);
+            } else {
+                MyReceiver.cancelAlarm(this);
+                item.setTitle(R.string.avvia_promemoria);
+            }
         }
 
         return super.onOptionsItemSelected(item);

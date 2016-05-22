@@ -5,6 +5,11 @@
     <item
         android:id="@+id/pasti_setting"
         android:orderInCategory="100"
-        android:title="Imposta Numero Pasti"
+        android:title="@string/num_pasti"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/alarm"
+        android:orderInCategory="100"
+        android:title="@string/avvia_promemoria"
         app:showAsAction="never" />
 </menu>

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MensApp</string>
     <string name="action_settings">Settings</string>
+    <string name="num_pasti">Imposta Numero Pasti</string>
+    <string name="avvia_promemoria">Avvia Promemoria Giornaliero</string>
+    <string name="stop_promemoria">Stoppa Promemoria Giornaliero</string>
 </resources>
